@@ -1,0 +1,34 @@
+.stopwatch {
+  align-items: center;
+  border-radius: 0.625rem;
+  border: 0.125rem solid var(--primary);
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  justify-content: center;
+  padding: 1.25rem;
+
+  .timer {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1.25rem;
+  }
+
+  .buttonsContainer {
+    display: flex;
+    gap: 0.625rem;
+
+    .button {
+      padding: 0.625rem 1.25rem;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #ffffff;
+      background-color: #007bff;
+      border-radius: 0.3125rem;
+
+      &:hover {
+        background-color: var(--primary-dark);
+      }
+    }
+  }
+}
