@@ -1,9 +1,9 @@
-import React from 'react'
+import styles from './styles.module.css'
 import Stopwatch from '@/components/Stopwatch'
 
 const StopWatchPage = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <Stopwatch />
     </div>
   )
