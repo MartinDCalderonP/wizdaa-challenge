@@ -3,6 +3,7 @@
 import React from 'react'
 import styles from './styles.module.css'
 import useStopwatch from '@/hooks/useStopwatch'
+import { formattedTime } from '@/utils'
 
 const Stopwatch = () => {
   const { timer, startTimer, stopTimer, resetTimer } = useStopwatch()
@@ -15,7 +16,8 @@ const Stopwatch = () => {
 
   return (
     <div className={styles.stopwatch}>
-      <span className={styles.timer}>{timer}</span>
+      <span className={styles.timer}>{formattedTime(timer)}</span>
+      
       <div className={styles.buttonsContainer}>
         {buttons.map((button) => (
           <button
