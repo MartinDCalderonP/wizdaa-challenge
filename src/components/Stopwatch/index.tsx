@@ -21,7 +21,7 @@ const Stopwatch = () => {
           <button
             key={button.label}
             className={styles.button}
-            onClick={() => button.fn}
+            onClick={button.fn}
           >
             {button.label}
           </button>
