@@ -7,13 +7,37 @@
   --button-secondary-hover: #f2f2f2;
 
   display: grid;
-  grid-template-rows: 1.25rem 1fr 1.25rem;
   align-items: center;
   justify-items: center;
   min-height: 100svh;
   padding: 5rem;
   gap: 4rem;
   font-family: var(--font-geist-sans);
+
+  .link {
+    background-color: transparent;
+    border-radius: 0.25rem;
+    border: 0.125rem solid var(--primary);
+    color: var(--primary);
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s;
+
+    &:hover {
+      color: var(--primary-dark);
+      border-color: var(--primary-dark);
+      scale: 1.1;
+    }
+
+    &:active {
+      opacity: 0.6;
+      scale: 0.9;
+    }
+  }
 
   @media (prefers-color-scheme: dark) {
     --gray-rgb: 255, 255, 255;
