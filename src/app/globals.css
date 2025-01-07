@@ -44,3 +44,31 @@ a {
     color-scheme: dark;
   }
 }
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    scale: 1.1;
+  }
+
+  &:active {
+    scale: 0.9;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+
+    &:hover,
+    &:active {
+      scale: none;
+    }
+  }
+}
