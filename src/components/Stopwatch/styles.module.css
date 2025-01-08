@@ -30,6 +30,10 @@
       &:hover {
         background: var(--primary-dark);
       }
+
+      &:disabled {
+        background: transparent;
+      }
     }
   }
 }
