@@ -6,7 +6,7 @@ import useStopwatch from '@/hooks/useStopwatch'
 import { formattedTime } from '@/utils'
 
 const Stopwatch = () => {
-  const { timer, startTimer, stopTimer, resetTimer } = useStopwatch()
+  const { time, startTimer, stopTimer, resetTimer } = useStopwatch()
 
   const buttons = [
     { label: 'Start', fn: startTimer },
@@ -16,8 +16,8 @@ const Stopwatch = () => {
 
   return (
     <div className={styles.stopwatch}>
-      <span className={styles.timer}>{formattedTime(timer)}</span>
-      
+      <span className={styles.timer}>{formattedTime(time)}</span>
+
       <div className={styles.buttonsContainer}>
         {buttons.map((button) => (
           <button
