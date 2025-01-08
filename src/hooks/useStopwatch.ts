@@ -22,7 +22,7 @@ const useStopwatch = () => {
   const stopTimer = () => setIsRunning(false)
   const resetTimer = () => setTime(0)
 
-  return { time, startTimer, stopTimer, resetTimer }
+  return { time, isRunning, startTimer, stopTimer, resetTimer }
 }
 
 export default useStopwatch

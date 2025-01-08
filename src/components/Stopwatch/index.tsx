@@ -6,12 +6,12 @@ import useStopwatch from '@/hooks/useStopwatch'
 import { formattedTime } from '@/utils'
 
 const Stopwatch = () => {
-  const { time, startTimer, stopTimer, resetTimer } = useStopwatch()
+  const { time, isRunning, startTimer, stopTimer, resetTimer } = useStopwatch()
 
   const buttons = [
-    { label: 'Start', fn: startTimer },
-    { label: 'Stop', fn: stopTimer },
-    { label: 'Reset', fn: resetTimer }
+    { label: 'Start', fn: startTimer, disabled: isRunning },
+    { label: 'Stop', fn: stopTimer, disabled: !isRunning },
+    { label: 'Reset', fn: resetTimer, disabled: time === 0 }
   ]
 
   return (
@@ -23,6 +23,7 @@ const Stopwatch = () => {
           <button
             key={button.label}
             className={styles.button}
+            disabled={button.disabled}
             onClick={button.fn}
           >
             {button.label}
