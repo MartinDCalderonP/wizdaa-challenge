@@ -11,12 +11,12 @@
   .time {
     font-size: 3rem;
     font-weight: bold;
-    margin-bottom: 1.25rem;
   }
 
   .buttonsContainer {
     display: flex;
     gap: 0.625rem;
+    margin-top: 1.25rem;
 
     .button {
       padding: 0.625rem 1.25rem;
