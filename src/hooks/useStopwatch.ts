@@ -1,31 +1,28 @@
-import { useState, useRef } from 'react'
+import { useState, useEffect } from 'react'
 
 const useStopwatch = () => {
-  const [timer, setTimer] = useState(0)
+  const [time, setTime] = useState(0)
+  const [isRunning, setIsRunning] = useState(false)
 
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+  useEffect(() => {
+    let timer: NodeJS.Timeout | undefined
 
-  const startTimer = () => {
-    timeoutRef.current = setTimeout(function updatedTimer() {
-      setTimer((prev) => prev + 1)
-      timeoutRef.current = setTimeout(updatedTimer, 1000)
-    }, 1000)
-  }
-
-  const stopTimer = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current)
+    if (isRunning) {
+      timer = setInterval(() => {
+        setTime((prevTime) => prevTime + 1)
+      }, 1000)
+    } else {
+      clearInterval(timer)
     }
-  }
 
-  const resetTimer = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current)
-    }
-    setTimer(0)
-  }
+    return () => clearInterval(timer)
+  }, [isRunning])
 
-  return { timer, startTimer, stopTimer, resetTimer }
+  const startTimer = () => setIsRunning(true)
+  const stopTimer = () => setIsRunning(false)
+  const resetTimer = () => setTime(0)
+
+  return { time, startTimer, stopTimer, resetTimer }
 }
 
 export default useStopwatch
