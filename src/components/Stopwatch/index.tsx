@@ -16,7 +16,7 @@ const Stopwatch = () => {
 
   return (
     <div className={styles.stopwatch}>
-      <span className={styles.timer}>{formattedTime(time)}</span>
+      <span className={styles.time}>{formattedTime(time)}</span>
 
       <div className={styles.buttonsContainer}>
         {buttons.map((button) => (
