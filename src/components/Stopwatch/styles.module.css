@@ -8,9 +8,15 @@
   justify-content: center;
   padding: 1.25rem;
 
-  .time {
-    font-size: 3rem;
-    font-weight: bold;
+  .timeWrapper {
+    position: relative;
+  }
+
+  .minuteAdded {
+    color: #008000;
+    position: absolute;
+    right: -5rem;
+    top: 0;
   }
 
   .buttonsContainer {
