@@ -23,11 +23,12 @@
       font-size: 1rem;
       font-weight: bold;
       color: #ffffff;
-      background-color: #007bff;
+      background: transparent;
+      border: 0.125rem solid var(--primary-dark);
       border-radius: 0.3125rem;
 
       &:hover {
-        background-color: var(--primary-dark);
+        background: var(--primary-dark);
       }
     }
   }
